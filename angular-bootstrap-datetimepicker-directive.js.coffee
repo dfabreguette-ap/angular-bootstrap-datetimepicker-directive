@@ -1,7 +1,7 @@
 'use strict'
-angular.module('datetimepicker', [])
+angular.module('DTP', [])
 
-.provider('datetimepicker', ->
+.provider('dateTimePickerProvider', ->
   default_options = {focusOnShow: false}
 
   @setOptions = (options) ->
@@ -14,8 +14,8 @@ angular.module('datetimepicker', [])
 
   return
 
-).directive 'dateTimePicker', ($timeout, datetimepicker) ->
-    default_options = datetimepicker.getOptions()
+).directive 'dateTimePicker', ($timeout, dateTimePickerProvider) ->
+    default_options = dateTimePickerProvider.getOptions()
     {
       require: '?ngModel'
       restrict: 'AE'
